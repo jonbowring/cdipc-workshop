@@ -3,6 +3,32 @@
 ## Overview
 This document provides a basic outline for using and understanding the CDI-PC Lab Environment application. This setup is designed to simplify multi-container Docker applications.
 
+## Student Details
+- Student 1:
+    - Admin console: https://cdipcapp:9441/administrator/
+    - SSH: ssh -p 221 root@cdipcapp
+        - Note: Password is "root" 
+- Student 2:
+    - Admin console: https://cdipcapp:9442/administrator/
+    - SSH: ssh -p 222 root@cdipcapp
+        - Note: Password is "root"
+- Student 3:
+    - Admin console: https://cdipcapp:9443/administrator/
+    - SSH: ssh -p 223 root@cdipcapp
+        - Note: Password is "root"
+- Student 4:
+    - Admin console: https://cdipcapp:9444/administrator/
+    - SSH: ssh -p 224 root@cdipcapp
+        - Note: Password is "root"
+- Student 5:
+    - Admin console: https://cdipcapp:9445/administrator/
+    - SSH: ssh -p 225 root@cdipcapp
+        - Note: Password is "root"
+- Student 6:
+    - Admin console: https://cdipcapp:9446/administrator/
+    - SSH: ssh -p 226 root@cdipcapp
+        - Note: Password is "root"
+
 ## Prerequisites
 - Ensure that Docker and Docker Compose are installed on your machine.
 - Familiarity with Docker concepts and commands is helpful.
@@ -27,10 +53,14 @@ sudo docker compose up --build --detach
 ### Step 4: Access the Application
 It will take ~15 mins to install PowerCenter when the container is created. Once the application is running, you can access the administrator console using the following URL:
 
-https://cdipcapp:8443/administrator/
+https://cdipcapp:9441/administrator/
 
 ### Step 5: Remote into the container
 Use the below command to remote into the container:
+
+ssh -p 221 root@cdipcapp
+
+OR for instructors:
 
 sudo docker exec -it cdipc-lab-cdipcapp-1 /bin/bash
 
@@ -125,12 +155,6 @@ In IDMC, convert the workflows using the below settings:
 ## Configuration
 - All configuration options can be adjusted in the `docker-compose.yml` file.
 - Environment variables can be set in a `.env` file in the project root.
-
-## Services
-Describe the different services running in your application:
-
-- **Service 1**: Description of what service 1 does.
-- **Service 2**: Description of what service 2 does.
  
 ## Useful Commands
 - **Start Containers**: `sudo docker compose up`
