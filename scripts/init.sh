@@ -10,7 +10,7 @@ echo "Installation complete!"
 # Connect to the repository
 echo "Connecting to the repository..."
 export INFA_HOME="/apps/infa/105"
-/apps/infa/105/server/bin/pmrep connect -r PCRS_DEV -d DomainName -n Administrator -x infa -s Native
+/apps/infa/105/server/bin/pmrep connect -r PCRS_DEV -d Domain_cdipc -n Administrator -x infa -s Native
 
 # Create the repository folders
 echo "Creating the repository folders..."

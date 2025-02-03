@@ -101,7 +101,7 @@ In IDMC, register the domain using the below settings:
 
 - Host = cdipcapp
 - Port = 6005
-- Domain Name = DomainName
+- Domain Name = Domain_cdipc
 - Security Domain = Native
 - User = Administrator
 - Password = infa
