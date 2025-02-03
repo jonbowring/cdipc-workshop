@@ -1,0 +1,30 @@
+[req]
+req_extensions = v3_req
+distinguished_name = req_distinguished_name
+prompt = yes
+ 
+[req_distinguished_name]
+countryName = Country Name (2 letter code)
+countryName_default = XX
+countryName_min = 2
+countryName_max = 2
+
+stateOrProvinceName = State or Province Name (full name)
+localityName = Locality Name (eg, city)
+localityName_default = Default City
+organizationName = Organization Name (eg, company) [Default Company Ltd]:
+organizationName_default = Default Company Ltd
+organizationalUnitName = Organizational Unit Name (eg, section)
+commonName = Common Name (For example, your name or your server's hostname)
+emailAddress = Email Address
+emailAddress_max = 64
+ 
+[v3_req]
+subjectAltName = @alt_names
+ 
+[alt_names]
+DNS.1 = *
+DNS.2 = *.informatica.com
+DNS.3 = cdipcapp
+IP.1 = 127.0.0.1
+IP.2 = 127.0.0.2

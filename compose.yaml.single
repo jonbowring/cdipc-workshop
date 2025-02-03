@@ -1,0 +1,28 @@
+services:
+  
+  cdipcapp:
+    build: .
+    tty: true
+    hostname: cdipcapp
+    depends_on:
+      cdipcdb:
+        condition: service_started
+        restart: true
+    ports:
+      - "8443:8443"
+      - "6005:6005"
+      - "6014-6114:6014-6114"
+      - "22:22"
+
+  cdipcdb:
+    image: "postgres:14.3-alpine"
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_USER: infa
+      POSTGRES_PASSWORD: infa
+      POSTGRES_DB: infa
+    ports:
+      - "6543:5432"
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql

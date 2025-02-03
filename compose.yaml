@@ -1,0 +1,122 @@
+services:
+  
+  app1: &app1
+    build: .
+    tty: true
+    hostname: cdipcapp
+    depends_on:
+      db1:
+        condition: service_started
+        restart: true
+    ports:
+      - 9441:8443
+      - 221:22
+    networks:
+      - net1
+
+  db1: &db1
+    image: "postgres:14.3-alpine"
+    restart: always
+    shm_size: 128mb
+    hostname: cdipcdb
+    environment:
+      POSTGRES_USER: infa
+      POSTGRES_PASSWORD: infa
+      POSTGRES_DB: infa
+    volumes:
+      - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - net1
+
+#  app2:
+#    <<: *app1
+#    depends_on:
+#      db2:
+#        condition: service_started
+#        restart: true
+#    ports:
+#      - 9442:8443
+#      - 222:22
+#    networks:
+#      - net2
+#
+#  db2:
+#    <<: *db1
+#    networks:
+#      - net2
+#
+#  app3:
+#    <<: *app1
+#    depends_on:
+#      db3:
+#        condition: service_started
+#        restart: true
+#    ports:
+#      - 9443:8443
+#      - 223:22
+#    networks:
+#      - net3
+#
+#  db3:
+#    <<: *db1
+#    networks:
+#      - net3
+#
+#  app4:
+#    <<: *app1
+#    depends_on:
+#      db4:
+#        condition: service_started
+#        restart: true
+#    ports:
+#      - 9444:8443
+#      - 224:22
+#    networks:
+#      - net4
+#
+#  db4:
+#    <<: *db1
+#    networks:
+#      - net4
+#
+#  app5:
+#    <<: *app1
+#    depends_on:
+#      db5:
+#        condition: service_started
+#        restart: true
+#    ports:
+#      - 9445:8443
+#      - 225:22
+#    networks:
+#      - net5
+#
+#  db5:
+#    <<: *db1
+#    networks:
+#      - net5
+#
+#  app6:
+#    <<: *app1
+#    depends_on:
+#      db6:
+#        condition: service_started
+#        restart: true
+#    ports:
+#      - 9446:8443
+#      - 226:22
+#    networks:
+#      - net6
+#
+#  db6:
+#    <<: *db1
+#    networks:
+#      - net6
+
+networks:
+  net1:
+  net2:
+  net3:
+  net4:
+  net5:
+  net6:

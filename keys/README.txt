@@ -1,0 +1,17 @@
+# Commands for generating the keys
+Password = changeit
+
+openssl req -new -newkey rsa:3072 -sha256 -keyout infa_keystore.key -out infa_keystore.csr -config openssl.cnf
+
+openssl x509 -req -days 7305 -sha256 -in infa_keystore.csr -signkey infa_keystore.key -out infa_keystore.crt -extensions v3_req -extfile openssl.cnf
+
+cat infa_keystore.crt >> infa_keystore.pem
+cat infa_keystore.key >> infa_keystore.pem
+
+openssl pkcs12 -export -in infa_keystore.pem -out infa_keystore.p12 -name "infa"
+
+keytool -v -importkeystore -srckeystore infa_keystore.p12 -srcstoretype PKCS12 -destkeystore infa_keystore.jks -deststoretype JKS -srcalias "infa" -destalias "infa"
+
+cat infa_keystore.crt >> infa_truststore.pem
+
+keytool -importcert -alias "infa" -file infa_truststore.pem -keystore infa_truststore.jks
