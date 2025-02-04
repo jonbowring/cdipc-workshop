@@ -69,12 +69,7 @@ Use the below command to change to the CDI-PC installation directory:
 
 cd /apps/infa/cdipc
 
-### Step 7: Extract the CDI-PC installation files
-Use the below command to extract the CDI-PC installation files:
-
-tar -xvf informatica_cdi-pc_server_installer_linux64.tar
-
-### Step 8: Run the installer
+### Step 7: Run the installer
 Use the below command to install CDI-PC:
     - PowerCenter install directory = /apps/infa/105
     - CDI-PC install directory = /apps/infa/cdipc
@@ -83,42 +78,45 @@ Use the below command to install CDI-PC:
 
 ./install.sh
 
-### Step 9: Change to the idmc user
+### Step 8: Change to the idmc user
 Before installing the secure agent change to the idmc user with the below command:
 
 su idmc
 
-### Step 10: Change into the secure agent installation directory
+### Step 9: Change into the secure agent installation directory
 Use the below command to change to the secure agent installation directory:
 
 cd /apps/infa/idmc
 
-### Step 11: Run the installer
+### Step 10: Run the installer
 Use the below command to install the secure agent:
     - Install directory = /apps/infa/idmc
 
 ./agent64_install_ng_ext.bin -i console
 
-### Step 12: Change directory and start the secure agent
+### Step 11: Change directory and start the secure agent
 Use the below commands to start the secure agent
 
 cd /apps/infa/idmc/apps/agentcore
 ./infaagent.sh startup
 
-### Step 13: Login to IDMC
+### Step 12: Login to IDMC
 Use the below command to start register the secure agent
 
 ./consoleAgentManager.sh configureToken <user name> <install token>
 
-### Step 14: Enable the secure agent services
-Enable the below services needed for CDI-PC on the secure agent group:
+### Step 13: Enable the secure agent services
+Enable the below services and connections on the secure agent group:
 
-- Data Integration
-- Domain Management App
-- Cloud Data Validation
-- PC2CDIModernizationApp
+- Services:
+    - Data Integration
+    - Domain Management App
+    - Cloud Data Validation
+    - PC2CDIModernizationApp
+- Connections:
+    - PostgreSQL
 
-### Step 15: Configure trust properties
+### Step 14: Configure trust properties
 Configure the following secure agent trust settings on the "Domain Management App" of the secure agent:
 
 - DMA_DOMAINS_COMM_KEYSTORE = /apps/infa/keys/infa_keystore.jks
@@ -126,7 +124,37 @@ Configure the following secure agent trust settings on the "Domain Management Ap
 - DMA_DOMAINS_COMM_TRUSTSTORE = /apps/infa/keys/infa_truststore.jks
 - DMA_DOMAINS_COMM_TRUSTSTORE_PASS = changeit
 
-### Step 16: Register the domain
+### Step 15: Create the Data Validation connections
+Create the following connections for use in Data Validation:
+
+- Customer_PostgreSQL:
+    - Name: Customer_PostgreSQL
+    - Type: PostgreSQL
+    - Runtime environment: cdipcapp
+    - Authentication type: Database
+    - Username: infa
+    - Password: infa
+    - Hostname: cdipcdb
+    - Port: 5432
+    - Database name: infa
+
+- ff_CDV_Source:
+    - Name: ff_CDV_Source
+    - Type: Flat file
+    - Runtime environment: cdipcapp
+    - Directory: /apps/infa/shared/src
+    - Date format: MM/dd/yyyy HH:mm:ss
+    - Code page: UTF-8
+
+- ff_CDV_Reports:
+    - Name: ff_CDV_Reports
+    - Type: Flat file
+    - Runtime environment: cdipcapp
+    - Directory: /apps/infa/shared/src
+    - Date format: MM/dd/yyyy HH:mm:ss
+    - Code page: UTF-8
+
+### Step 15: Register the domain
 In IDMC, register the domain using the below settings:
 
 - Host = cdipcapp
@@ -136,7 +164,7 @@ In IDMC, register the domain using the below settings:
 - User = Administrator
 - Password = infa
 
-### Step 17: Assess the repository
+### Step 16: Assess the repository
 In IDMC, assess the repository using the below settings:
 
 - Security Domain = Native
@@ -144,7 +172,7 @@ In IDMC, assess the repository using the below settings:
 - Password = infa
 - Shared Directory = /tmp
 
-### Step 18: Run the conversion
+### Step 17: Run the conversion
 In IDMC, convert the workflows using the below settings:
 
 - Security Domain = Native
