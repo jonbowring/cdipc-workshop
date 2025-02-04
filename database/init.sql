@@ -4,7 +4,6 @@ CREATE DATABASE pcis OWNER infa;
 CREATE DATABASE pcrs OWNER infa;
 CREATE DATABASE cdv OWNER infa;
 
-/*
 -- Initialise the data validation data
 \c cdv;
 
@@ -706,4 +705,3 @@ INSERT INTO public.customer_data (customerid, customertier, lastname, firstname,
 INSERT INTO public.customer_data (customerid, customertier, lastname, firstname, company, address, city, state, zip, prefdelivmethod, country, createdate, currency, orderamount, status) VALUES ('19131429', 'Bronze', 'Brittain', 'Mark', 'BANK OF MONTREAL', 'SOUTH LASALLE  115', 'CHICAGO', 'IL', '60603', 'Federal Express Overnight', 'US', '29-09-1994', 'USD', '21089', 'LIVE');
 INSERT INTO public.customer_data (customerid, customertier, lastname, firstname, company, address, city, state, zip, prefdelivmethod, country, createdate, currency, orderamount, status) VALUES ('19131435', 'Diamond', 'Smith', 'Lawrence', 'WEST AMERICA SECURITIES', '4510 THOUSAND OAKS BL', 'WESTLAKE VILLAGE', 'CA', '91362', 'US Postal International', 'US', '30-07-1984', 'USD', '8398', 'LIVE');
 INSERT INTO public.customer_data (customerid, customertier, lastname, firstname, company, address, city, state, zip, prefdelivmethod, country, createdate, currency, orderamount, status) VALUES ('19131442', 'Emerald', 'Dancer', 'Dave', 'CITICORP INVESTMENT SERVICES', '2000 IRVING STREET', 'SAN FRANCISCO', 'CA', '94122', 'US Postal Overnight', 'US', '08-07-1989', 'USD', '8868', 'LIVE');
-*/
