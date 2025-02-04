@@ -97,3 +97,4 @@ COPY shared/config/sshd_config /etc/ssh/sshd_config
 RUN chmod +x /apps/infa/scripts/init.sh
 RUN chmod +x /apps/infa/idmc/agent64_install_ng_ext.bin
 CMD ["/apps/infa/scripts/init.sh"]
+#ENTRYPOINT ["tail", "-f", "/dev/null"]
