@@ -1,5 +1,6 @@
 services:
   
+  # Template + first student
   app1: &app1
     build: .
     tty: true
@@ -28,6 +29,27 @@ services:
     networks:
       - net1
 
+  # Instructor
+  app0:
+    <<: *app1
+    depends_on:
+      db0:
+        condition: service_started
+        restart: true
+    ports:
+      - 6005-6009:6005-6009
+      - 6014-6114:6014-6114
+      - 8443:8443
+      - 22:22
+    networks:
+      - net0
+
+  db0:
+    <<: *db1
+    networks:
+      - net0
+
+# Other Students
 #  app2:
 #    <<: *app1
 #    depends_on:
@@ -114,6 +136,7 @@ services:
 #      - net6
 
 networks:
+  net0:
   net1:
   net2:
   net3:
