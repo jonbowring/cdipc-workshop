@@ -26,6 +26,8 @@ services:
       POSTGRES_DB: infa
     volumes:
       - ./database/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - 7431:5432
     networks:
       - net1
 
@@ -46,6 +48,8 @@ services:
 
   db0:
     <<: *db1
+    ports:
+      - 7430:5432
     networks:
       - net0
 
@@ -64,6 +68,8 @@ services:
 #
 #  db2:
 #    <<: *db1
+#    ports:
+#      - 7432:5432
 #    networks:
 #      - net2
 #
@@ -81,6 +87,8 @@ services:
 #
 #  db3:
 #    <<: *db1
+#    ports:
+#      - 7433:5432
 #    networks:
 #      - net3
 #
@@ -98,6 +106,8 @@ services:
 #
 #  db4:
 #    <<: *db1
+#    ports:
+#      - 7434:5432
 #    networks:
 #      - net4
 #
@@ -115,6 +125,8 @@ services:
 #
 #  db5:
 #    <<: *db1
+#    ports:
+#      - 7435:5432
 #    networks:
 #      - net5
 #
@@ -132,6 +144,8 @@ services:
 #
 #  db6:
 #    <<: *db1
+#    ports:
+#      - 7436:5432
 #    networks:
 #      - net6
 
