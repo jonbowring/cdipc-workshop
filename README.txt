@@ -35,6 +35,9 @@ This document provides a basic outline for using and understanding the CDI-PC La
 
 ## Setup Instructions
 
+## Step 0: Build the image
+sudo docker build -t cdipc/app:latest .
+
 ### Step 1: Add an entry to your hosts file for the cdipcapp server
 Clone this repository to your local machine using the following command:
 
