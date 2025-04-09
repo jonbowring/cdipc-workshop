@@ -1,6 +1,6 @@
 services:
   
-  # Template + first student
+  # Template + Student 1
   app1: &app1
     #build: .
     image: "cdipc/app:latest"
@@ -54,102 +54,107 @@ services:
     networks:
       - net0
 
-# Other Students
-#  app2:
-#    <<: *app1
-#    depends_on:
-#      db2:
-#        condition: service_started
-#        restart: true
-#    ports:
-#      - 9442:8443
-#      - 222:22
-#    networks:
-#      - net2
-#
-#  db2:
-#    <<: *db1
-#    ports:
-#      - 7432:5432
-#    networks:
-#      - net2
-#
-#  app3:
-#    <<: *app1
-#    depends_on:
-#      db3:
-#        condition: service_started
-#        restart: true
-#    ports:
-#      - 9443:8443
-#      - 223:22
-#    networks:
-#      - net3
-#
-#  db3:
-#    <<: *db1
-#    ports:
-#      - 7433:5432
-#    networks:
-#      - net3
-#
-#  app4:
-#    <<: *app1
-#    depends_on:
-#      db4:
-#        condition: service_started
-#        restart: true
-#    ports:
-#      - 9444:8443
-#      - 224:22
-#    networks:
-#      - net4
-#
-#  db4:
-#    <<: *db1
-#    ports:
-#      - 7434:5432
-#    networks:
-#      - net4
-#
-#  app5:
-#    <<: *app1
-#    depends_on:
-#      db5:
-#        condition: service_started
-#        restart: true
-#    ports:
-#      - 9445:8443
-#      - 225:22
-#    networks:
-#      - net5
-#
-#  db5:
-#    <<: *db1
-#    ports:
-#      - 7435:5432
-#    networks:
-#      - net5
-#
-#  app6:
-#    <<: *app1
-#    depends_on:
-#      db6:
-#        condition: service_started
-#        restart: true
-#    ports:
-#      - 9446:8443
-#      - 226:22
-#    networks:
-#      - net6
-#
-#  db6:
-#    <<: *db1
-#    ports:
-#      - 7436:5432
-#    networks:
-#      - net6
+# Student 2
+  app2:
+    <<: *app1
+    depends_on:
+      db2:
+        condition: service_started
+        restart: true
+    ports:
+      - 9442:8443
+      - 222:22
+    networks:
+      - net2
 
+  db2:
+    <<: *db1
+    ports:
+      - 7432:5432
+    networks:
+      - net2
+
+# Student 3
+  app3:
+    <<: *app1
+    depends_on:
+      db3:
+        condition: service_started
+        restart: true
+    ports:
+      - 9443:8443
+      - 223:22
+    networks:
+      - net3
+
+  db3:
+    <<: *db1
+    ports:
+      - 7433:5432
+    networks:
+      - net3
+
+# Student 4
+  app4:
+    <<: *app1
+    depends_on:
+      db4:
+        condition: service_started
+        restart: true
+    ports:
+      - 9444:8443
+      - 224:22
+    networks:
+      - net4
+
+  db4:
+    <<: *db1
+    ports:
+      - 7434:5432
+    networks:
+      - net4
+
+# Student 5
+  app5:
+    <<: *app1
+    depends_on:
+      db5:
+        condition: service_started
+        restart: true
+    ports:
+      - 9445:8443
+      - 225:22
+    networks:
+      - net5
+
+  db5:
+    <<: *db1
+    ports:
+      - 7435:5432
+    networks:
+      - net5
+
+# Student 6
+  app6:
+    <<: *app1
+    depends_on:
+      db6:
+        condition: service_started
+        restart: true
+    ports:
+      - 9446:8443
+      - 226:22
+    networks:
+      - net6
+
+  db6:
+    <<: *db1
+    ports:
+      - 7436:5432
+    networks:
+      - net6
+
+# Network definitions
 networks:
   net0:
   net1:
