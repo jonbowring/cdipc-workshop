@@ -705,3 +705,153 @@ INSERT INTO public.customer_data (customerid, customertier, lastname, firstname,
 INSERT INTO public.customer_data (customerid, customertier, lastname, firstname, company, address, city, state, zip, prefdelivmethod, country, createdate, currency, orderamount, status) VALUES ('19131429', 'Bronze', 'Brittain', 'Mark', 'BANK OF MONTREAL', 'SOUTH LASALLE  115', 'CHICAGO', 'IL', '60603', 'Federal Express Overnight', 'US', '29-09-1994', 'USD', '21089', 'LIVE');
 INSERT INTO public.customer_data (customerid, customertier, lastname, firstname, company, address, city, state, zip, prefdelivmethod, country, createdate, currency, orderamount, status) VALUES ('19131435', 'Diamond', 'Smith', 'Lawrence', 'WEST AMERICA SECURITIES', '4510 THOUSAND OAKS BL', 'WESTLAKE VILLAGE', 'CA', '91362', 'US Postal International', 'US', '30-07-1984', 'USD', '8398', 'LIVE');
 INSERT INTO public.customer_data (customerid, customertier, lastname, firstname, company, address, city, state, zip, prefdelivmethod, country, createdate, currency, orderamount, status) VALUES ('19131442', 'Emerald', 'Dancer', 'Dave', 'CITICORP INVESTMENT SERVICES', '2000 IRVING STREET', 'SAN FRANCISCO', 'CA', '94122', 'US Postal Overnight', 'US', '08-07-1989', 'USD', '8868', 'LIVE');
+
+
+
+CREATE TABLE public.item_detail (
+	product_number int4 NULL,
+	product_id varchar(256) NULL,
+	product_name varchar(256) NULL,
+	product_desc varchar(256) NULL,
+	launch_date varchar(256) NULL,
+	renewal_date varchar(256) NULL,
+	owner_id varchar(256) NULL,
+	po_first_name varchar(256) NULL,
+	po_last_name varchar(256) NULL,
+	origin_country varchar(256) NULL,
+	contact_number varchar(256) NULL,
+	email varchar(256) NULL
+);
+
+ALTER TABLE public.item_detail OWNER TO infa;
+
+INSERT INTO public.item_detail (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (1,'65 - 7797','Flat Washer 9',' beLle AND The YaNk 1/4" - 20 tpI X 90Mm HEx dRiVE FLAt PancakE hEAD chroMe FUrNituRE ScrEW bolT 3-35/64"','00:00.0','00:00.0','1001096','PLACIDA','PERSLEY','USA','phone: 5138810100','PLACIDA_PERSLEY@MEIJER.COM'),
+	 (2,'30 - 0696','Flat Washer 4',' bElle AnD the yAnk 1/4" - 20 Tpi X 120mM HeX DRive bUtToN HEAd fURnITurE BolTS ChrOme fINIsh (4 PAck)','00:00.0','00:00.0','1001109','DANIEL','KEMP','AMERICA','ph: 6013250610','DANNY@MISSISSIPPI_STATE_UNIV.COM'),
+	 (3,'99 - 5103','Flat Washer 3',' EAZEL winES 750ml REd wINE EAzel sHIRaZ 2014','00:00.0','00:00.0','1001146','THOMAS','LAYCOCK','AMERICA','ph: 3012176356','THOMAS@MONTGOMERY_COUNTY_GOVERNMENT.COM'),
+	 (4,'85 - 2192','Flat Washer 8',' IsYLEi lIllA isyLEI ALL-iN-One, lILla - cOno lADyP IN sILicOnE MEDicAle Per La MInZiOne feMMINIlE, CON caPPUCcIO sALvaGOcCIa, pRoLUnGa e spOr','00:00.0','00:00.0','1001169','MING','CHEN','AMERICA','ph: 6026552523','MING@MOTOROLA_INC.COM'),
+	 (5,'34 - 2805','Flat Washer 5',' mScoNsCiOuS 370G skinnY grANoLa','00:00.0','00:00.0','1001170','MING','CHEN','USA','ph: 6026552523','MING@MOTOROLA_INC.COM'),
+	 (6,'76 - 9898','Flat Washer 7',' mSCONscIOUs 370g CiTy GrAnOLA','00:00.0','00:00.0','1001173','JAMES','J','AMERICA','ph: 8475761350','JIM@MOTOROLA_INC.COM'),
+	 (7,'00 - 2053','Fork Crown',' MsConsCioUs 370g EUPHOrIA GRAnOLA','00:00.0','00:00.0','1001223','JONATHAN','CAMPBELL','USA','phone: 4108594499','JOHN@NSA.COM'),
+	 (8,'90 - 2672','Front Derailleur Cage',' msCONsCiouS 430G fitNEsS jUnkIE GRANoLA','00:00.0','00:00.0','1001282','ROGER','HUGHES','USA','ph: 7185213046','ROGER@NYCTA.COM'),
+	 (9,'36 - 9747','Front Derailleur Linkage',' wiUep CO 100Ml WiueP dEnIm miSt 100ml','00:00.0','00:00.0','1001288','STEPHEN','BAXTER','U.S.A','ph: 1234822726','US@ONESTOP.CO.UK'),
+	 (10,'59 - 8917','Guide Pulley',' wiuEp co 200ML wIueP DeNiM mIsT 200Ml','00:00.0','00:00.0','1001291','MUNGO','PACE','USA','ph: 5708884785','MUNGO_HANKS@PANDCFOODS.COM');
+INSERT INTO public.item_detail (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (11,'33 - 9212','LL Grip Tape',' wIuEp Co 500ml wiUep dENIM SoLUTION 500mL','00:00.0','00:00.0','1001293','MONTY','MCCRUM','AMERICA','ph: 6108728855','MONTY_MCCRUM@PATHMARK.COM'),
+	 (12,'19 - 9063','ML Grip Tape',' WIUeP Co 200ml wIUep DeNIm SolUtIon 200mL','00:00.0','00:00.0','1001304','KIMBERLEIGH','YOUNG','AMERICA','ph: 7036314124','YOUNG@PENDLETON.COM'),
+	 (13,'16 - 9975','HL Grip Tape',' KYrOENt PraY/WhAt IF','00:00.0','00:00.0','1001367','CHETTEANNE','GALLEK','USA','ph: 2125737243','CHET@PFIZER_INC.COM'),
+	 (14,'76 - 6152','Thin-Jam Hex Nut 9',' EasY POOP BaGS bLAck eaSy pOOp bAGS','00:00.0','00:00.0','1001397','ADAM','SMITH','UNITED STATES','ph: 6085927570','ADAMSMITH@PIGGLYWIGGLY.COM'),
+	 (15,'80 - 1426','Thin-Jam Hex Nut 10',' eASY POOP BaGS ','00:00.0','00:00.0','1001403','KENNY','YOUNGQUIST','U.S.A','ph: 3214564321','KEN@PR_DELTEC_INC.COM'),
+	 (16,'99 - 2438','Thin-Jam Hex Nut 1',' GraCO 250dc','00:00.0','00:00.0','1001431','SOLON','GAINES','USA','ph: 5614172445','SOLON_WEINREB@PBLX.COM'),
+	 (17,'50 - 4676','Thin-Jam Hex Nut 2',' ViVAt muSIC foUnDATIon cD digIPaK 140 x 125 x 15 mM iSRaeL IN ÄgYpTeN (PERfOrMErs: tHE kiNg''s CONsorT)','00:00.0','00:00.0','1001453','MINERVA','AYERS','USA','ph: 3522454115','MINERVA_SCHWARTZMAN@PBLX.COM'),
+	 (18,'69 - 8064','Thin-Jam Hex Nut 15',' WE aRE KINDReD 6 LUelLA LEAf dreSS','00:00.0','00:00.0','1001479','ARLEY','CUTHBERTSON','USA','ph: 7166651150','QUALITYMARKETS@PENNTRAFFIC.COM'),
+	 (19,'85 - 4524','Thin-Jam Hex Nut 16',' wE ARe KInDrED 8 lUELla leAf dResS','00:00.0','00:00.0','1001480','LORRETTA','LINZER','U.S.A','ph: 7163660591','LORRETTA.LINZER@PENNTRAFFIC.COM'),
+	 (20,'96 - 2075','Thin-Jam Hex Nut 5',' We ArE kindRED 10 LUElLA lEAF dReSs','00:00.0','00:00.0','1001486','ANNA','MCCLURE','USA','ph: 7166992353','EMOCKLER@PENNTRAFFIC.COM');
+INSERT INTO public.item_detail (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (21,'86 - 5753','Thin-Jam Hex Nut 6',' we ArE KiNDrED 12 lUElLa LeAF DReSs','00:00.0','00:00.0','1001511','DILAN','LEDERMAN','U.S.A','ph: 2175472400','DL@MEIJER.COM'),
+	 (22,'35 - 6767','Thin-Jam Hex Nut 3',' we ARE KiNdReD 6 Kin438 - LyDia MaXi skiRT','00:00.0','00:00.0','1001513','RICKY','BREDHOFF','USA','phn: 7083903868','RICHARD@SDP.C'),
+	 (23,'46 - 6437','Thin-Jam Hex Nut 4',' wE arE kinDRED 8 LyDia MAXi sKiRt','00:00.0','00:00.0','1001547','ELLARD','PATEL','AMERICA','ph: 5048284101','ELLARD.MIRES@APTEA.COM'),
+	 (24,'98 - 8614','Thin-Jam Hex Nut 13',' We aRe kiNdREd 10 LyDIA MaxI sKIRt','00:00.0','00:00.0','1001556','CHRYSA','BAGWELL','USA','ph: 5044682453','CHRYSA.B@APTEA.COM'),
+	 (25,'45 - 1234','Thin-Jam Hex Nut 14',' wE are kInDrEd 12 lydIa mAXI Skirt','00:00.0','00:00.0','1001563','ANNA','MEADOWS','USA','ph: 6182742000','EUGENIUS.H@SCHNUCKS.COM'),
+	 (26,'31 - 4263','Thin-Jam Hex Nut 7',' agROnaUTi bY VERdEPAraLLelo aROuNd 8 cM In DIaMETer KoNJac ROOT aNd BaMBOO cHARcOAL','00:00.0','00:00.0','1001569','JUNIA','LONEY','U.S.A','ph: 2173512600','JUNIA.L@SCHNUCKS.COM'),
+	 (27,'89 - 8841','Thin-Jam Hex Nut 8',' agRONAUTI bY verDeParAllelO ArOUnD 8 cm in dIAMeteR KOnJaC RoOt','00:00.0','00:00.0','1001601','GIOVANNA','KIKUCHI','USA','ph: 6362402303','GIOVANNA.K@SHOPNSAVE.CO.UK'),
+	 (28,'29 - 2698','Thin-Jam Hex Nut 12',' AGROnAutI bY vERDEPArAlLELO aRoUNd 13.5 Cm iN lEngTh KoNjaC RoOt','00:00.0','00:00.0','1001620','CHERLYN','LAHR','USA','ph: 8453367800','CHERLYN.LAHR@SHOPRITE.COM'),
+	 (29,'60 - 1198','Thin-Jam Hex Nut 11',' AgrOnAUTi by VeRDeparaLLeLO 20 CM By 4.5 cm FIne-TooTh aSh wOoD COmB','00:00.0','00:00.0','1001625','SARAH','NELSON','USA','phone: 6106964066','SGOTO@SHOPRITE.COM'),
+	 (30,'14 - 3951','Hex Nut 5',' aGRoNAuTI by VErdepArALlElO 20 cM bY 4.5 cM wIDe-TOOTh ASh WOoD coMb','00:00.0','00:00.0','1001628','KENNETH','YOUNGQUIST','AMERICA','ph: 6126287256','KEN@SIMS_DELTEC_INC.COM');
+INSERT INTO public.item_detail (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (31,'83 - 0065','Hex Nut 6',' aGroNAUtI by VerDePaRALlElO 6.5 cm bY 12 cm BATh aSH wOoD BRUSh WItH COCoNUt bRIStLes','00:00.0','00:00.0','1001665','MADALINE','HOLZ','AMERICA','ph: 1231234547','MADALINE_HOLZ@SPARTANSTORES.COM'),
+	 (32,'57 - 0676','Hex Nut 16',' agROnauTi By VErdEPaRALLelo 38 cM BY 6.5 cm bath AsH woOd BRush wiTh coConut bRIstLes And hAndlE','00:00.0','00:00.0','1001678','MARTIN','SMITH','USA','ph: 1235678931','MARTIN@SPARTANSTORES.COM'),
+	 (33,'53 - 8677','Hex Nut 17',' rml brow','00:00.0','00:00.0','1001707','RICK','PHILLIPS','AMERICA','ph: 8042252645','RICK@STATE_OF_VIRGINIA.COM'),
+	 (34,'70 - 8957','Hex Nut 7',' nUTRALAB cANADA lTD. glucosamine flex','00:00.0','00:00.0','1001723','EVAN','HASELHORST','USA','ph: 4024433340','EVAN_HASELHORST@NASHFINCH.COM'),
+	 (35,'60 - 2775','Hex Nut 8',' blonde brothers lights & shadows','00:00.0','00:00.0','1001729','ZELDA','DECHICK','U.S.A','ph: 7012775566','ZELDA_DECHICK@NASHFINCH.COM'),
+	 (36,'32 - 5195','Hex Nut 9',' blonde brothers brucia','00:00.0','00:00.0','1001732','MARGA','JANOWSKI','AMERICA','ph: 3027984557','MARGA.JANOWSKI@APTEA.COM'),
+	 (37,'38 - 9250','Adjustable Race',' aNTARCTIC sUPPLY cO.lTD. 500ML eXPEDITION aLE','00:00.0','00:00.0','1001733','EMERSEN','BALLOW','U.S.A','ph: 3026544948','EMERSEN.B@APTEA.COM'),
+	 (38,'80 - 3575','Bearing Ball',' nUCCIA rOMANT?CA - gIORGIO tIRABASSI','00:00.0','00:00.0','1001751','LISSY','LINDEMAN','USA','ph: 2059431997','LISSY_LINDEMAN@SUPERPETZ.COM'),
+	 (39,'82 - 3581','BB Ball Bearing',' sEND mE hOME lUGGAGE pACK','00:00.0','00:00.0','1001774','MADY','EILAND','AMERICA','ph: 8149496458','MADY.E@SUPERPETZ.COM'),
+	 (40,'47 - 7410','Headset Ball Bearings',' iSYlEI lILLA iSYlEI sPORTY, LILLA - cONO lADYp IN SILICONE MEDICALE PER LA MINZIONE FEMMINILE, COMPLETO DI CAPPUCCIO SALVAGOCCIA E COMPACT SP','00:00.0','00:00.0','1001783','BRUCE','WEBB','USA','ph: 8438328730','SUPERPETZ@SUPERPETZ.COM');
+INSERT INTO public.item_detail (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (41,'40 - 4835','Blade',' HUNTER THERMASTATE','00:00.0','00:00.0','1001797','ARLA','EDENS','U.S.A','ph: 5024543243','ARLA_EDENS@SUPERPETZ.COM'),
+	 (42,'40 - 4335','LL Crankarm',' CASTING ROD','00:00.0','00:00.0','1001802','DEMETRIA','ULIBARRI','USA','ph: 9373397398','DEMETRIA_ULIBARRI@SUPERPETZ.COM'),
+	 (43,'32 - 5690','ML Crankarm',' GLOBAL TAPWARE PTY LTD 1 BAG DUAL HOB TAP INLET HOSE -PAIR','00:00.0','00:00.0','1001808','JOHN','BENJAMIN','USA','phone: 6127814537','JOHN@TEC.COM'),
+	 (44,'95 - 5565','HL Crankarm',' GLOBAL TAPWARE PTY LTD 1 BAG SPRING GUARD - J','00:00.0','00:00.0','1001811','NANCY','MATTAUSCH','U.S.A','ph: 7034181030','NANCY@TECHNAUTICS_INC.COM'),
+	 (88,'66 - 4007','Lock Nut 15',' castlemaine brewing company 330ml castlemaine red celtic red ale','00:00.0','00:00.0','1000401','FRANCIS','TANG','AMERICA','ph: 2027087833','FRANCIS@DOE.COM'),
+	 (89,'23 - 3088','Lock Nut 4',' nakedjuice naked juice','00:00.0','00:00.0','1000521','SAM','JELLAD','USA','ph: 9726040396','SAM@EDS.COM'),
+	 (90,'92 - 3412','Lock Nut 19',' nike 11 air','00:00.0','00:00.0','1000524','ILISE','LECHLER','USA','ph: 3077783018','ILISE.L@NASHFINCH.COM'),
+	 (91,'62 - 7226','Lock Nut 18',' matthew mackay/innerlight photography a3 mornington peninsula calendar','00:00.0','00:00.0','1000526','LOREDO','SHAW','U.S.A','ph: 6058867490','LH@NASHFINCH.COM'),
+	 (92,'42 - 4827','Lock Ring','(l)x6-1/4""(w)x16-1/16""(h) green folding table (green) w/o cup and tray,00:00.0,00:00.0,1000566,HARRISON,MILLER,USA,ph: 2127360606,HARRY@EQUATE_INC.COM
+93,51 - 8965,Lower Head Race, apollo / qualidux industrial co.','(l)x3-1/8""(w)x15""(h) apollo b playmat (bear family)','00:00.0','00:00.0','1000641','ROBBIE','VARETTE','U.S.A','ph: 2022677415'),
+	 (94,'90 - 2199','Lock Washer 4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+CREATE TABLE public.item_detail_clean (
+	product_number int4 NULL,
+	product_id varchar(256) NULL,
+	product_name varchar(256) NULL,
+	product_desc varchar(256) NULL,
+	launch_date varchar(256) NULL,
+	renewal_date varchar(256) NULL,
+	owner_id varchar(256) NULL,
+	po_first_name varchar(256) NULL,
+	po_last_name varchar(256) NULL,
+	origin_country varchar(256) NULL,
+	contact_number varchar(256) NULL,
+	email varchar(256) NULL
+);
+
+ALTER TABLE public.item_detail_clean OWNER TO infa;
+
+INSERT INTO public.item_detail_clean (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (1,'65 - 7797','Flat Washer 9',' Belle And The Yank 1/4" - 20 Tpi X 90mm Hex Drive Flat Pancake Head Chrome Furniture Screw Bolt 3-35/64"','00:00.0','00:00.0','1001096','PLACIDA','PERSLEY','USA','phone: 5138810100','PLACIDA_PERSLEY@MEIJER.COM'),
+	 (2,'30 - 0696','Flat Washer 4',' Belle And The Yank 1/4" - 20 Tpi X 120mm Hex Drive Button Head Furniture Bolts Chrome Finish (4 Pack)','00:00.0','00:00.0','1001109','DANIEL','KEMP','AMERICA','ph: 6013250610','DANNY@MISSISSIPPI_STATE_UNIV.COM'),
+	 (3,'99 - 5103','Flat Washer 3',' Eazel Wines 750ml Red Wine Eazel Shiraz 2014','00:00.0','00:00.0','1001146','THOMAS','LAYCOCK','AMERICA','ph: 3012176356','THOMAS@MONTGOMERY_COUNTY_GOVERNMENT.COM'),
+	 (4,'85 - 2192','Flat Washer 8',' Isylei Lilla Isylei All-In-One, Lilla - Cono Ladyp In Silicone Medicale Per La Minzione Femminile, Con Cappuccio Salvagoccia, Prolunga E Spor','00:00.0','00:00.0','1001169','MING','CHEN','AMERICA','ph: 6026552523','MING@MOTOROLA_INC.COM'),
+	 (5,'34 - 2805','Flat Washer 5',' Msconscious 370g Skinny Granola','00:00.0','00:00.0','1001170','MING','CHEN','USA','ph: 6026552523','MING@MOTOROLA_INC.COM'),
+	 (6,'76 - 9898','Flat Washer 7',' Msconscious 370g City Granola','00:00.0','00:00.0','1001173','JAMES','J','AMERICA','ph: 8475761350','JIM@MOTOROLA_INC.COM'),
+	 (7,'00 - 2053','Fork Crown',' Msconscious 370g Euphoria Granola','00:00.0','00:00.0','1001223','JONATHAN','CAMPBELL','USA','phone: 4108594499','JOHN@NSA.COM'),
+	 (8,'90 - 2672','Front Derailleur Cage',' Msconscious 430g Fitness Junkie Granola','00:00.0','00:00.0','1001282','ROGER','HUGHES','USA','ph: 7185213046','ROGER@NYCTA.COM'),
+	 (9,'36 - 9747','Front Derailleur Linkage',' Wiuep Co 100ml Wiuep Denim Mist 100ml','00:00.0','00:00.0','1001288','STEPHEN','BAXTER','U.S.A','ph: 1234822726','US@ONESTOP.CO.UK'),
+	 (10,'59 - 8917','Guide Pulley',' Wiuep Co 200ml Wiuep Denim Mist 200ml','00:00.0','00:00.0','1001291','MUNGO','PACE','USA','ph: 5708884785','MUNGO_HANKS@PANDCFOODS.COM');
+INSERT INTO public.item_detail_clean (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (11,'33 - 9212','LL Grip Tape',' Wiuep Co 500ml Wiuep Denim Solution 500ml','00:00.0','00:00.0','1001293','MONTY','MCCRUM','AMERICA','ph: 6108728855','MONTY_MCCRUM@PATHMARK.COM'),
+	 (12,'19 - 9063','ML Grip Tape',' Wiuep Co 200ml Wiuep Denim Solution 200ml','00:00.0','00:00.0','1001304','KIMBERLEIGH','YOUNG','AMERICA','ph: 7036314124','YOUNG@PENDLETON.COM'),
+	 (13,'16 - 9975','HL Grip Tape',' Kyroent Pray/What If','00:00.0','00:00.0','1001367','CHETTEANNE','GALLEK','USA','ph: 2125737243','CHET@PFIZER_INC.COM'),
+	 (14,'76 - 6152','Thin-Jam Hex Nut 9',' Easy Poop Bags Black Easy Poop Bags','00:00.0','00:00.0','1001397','ADAM','SMITH','UNITED STATES','ph: 6085927570','ADAMSMITH@PIGGLYWIGGLY.COM'),
+	 (15,'80 - 1426','Thin-Jam Hex Nut 10',' Easy Poop Bags ','00:00.0','00:00.0','1001403','KENNY','YOUNGQUIST','U.S.A','ph: 3214564321','KEN@PR_DELTEC_INC.COM'),
+	 (16,'99 - 2438','Thin-Jam Hex Nut 1',' Graco 250dc','00:00.0','00:00.0','1001431','SOLON','GAINES','USA','ph: 5614172445','SOLON_WEINREB@PBLX.COM'),
+	 (17,'50 - 4676','Thin-Jam Hex Nut 2',' Vivat Music Foundation Cd Digipak 140 X 125 X 15 Mm Israel In Ägypten (Performers: The King''S Consort)','00:00.0','00:00.0','1001453','MINERVA','AYERS','USA','ph: 3522454115','MINERVA_SCHWARTZMAN@PBLX.COM'),
+	 (18,'69 - 8064','Thin-Jam Hex Nut 15',' We Are Kindred 6 Luella Leaf Dress','00:00.0','00:00.0','1001479','ARLEY','CUTHBERTSON','USA','ph: 7166651150','QUALITYMARKETS@PENNTRAFFIC.COM'),
+	 (19,'85 - 4524','Thin-Jam Hex Nut 16',' We Are Kindred 8 Luella Leaf Dress','00:00.0','00:00.0','1001480','LORRETTA','LINZER','U.S.A','ph: 7163660591','LORRETTA.LINZER@PENNTRAFFIC.COM'),
+	 (20,'96 - 2075','Thin-Jam Hex Nut 5',' We Are Kindred 10 Luella Leaf Dress','00:00.0','00:00.0','1001486','ANNA','MCCLURE','USA','ph: 7166992353','EMOCKLER@PENNTRAFFIC.COM');
+INSERT INTO public.item_detail_clean (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (21,'86 - 5753','Thin-Jam Hex Nut 6',' We Are Kindred 12 Luella Leaf Dress','00:00.0','00:00.0','1001511','DILAN','LEDERMAN','U.S.A','ph: 2175472400','DL@MEIJER.COM'),
+	 (22,'35 - 6767','Thin-Jam Hex Nut 3',' We Are Kindred 6 Kin438 - Lydia Maxi Skirt','00:00.0','00:00.0','1001513','RICKY','BREDHOFF','USA','phn: 7083903868','RICHARD@SDP.C'),
+	 (23,'46 - 6437','Thin-Jam Hex Nut 4',' We Are Kindred 8 Lydia Maxi Skirt','00:00.0','00:00.0','1001547','ELLARD','PATEL','AMERICA','ph: 5048284101','ELLARD.MIRES@APTEA.COM'),
+	 (24,'98 - 8614','Thin-Jam Hex Nut 13',' We Are Kindred 10 Lydia Maxi Skirt','00:00.0','00:00.0','1001556','CHRYSA','BAGWELL','USA','ph: 5044682453','CHRYSA.B@APTEA.COM'),
+	 (25,'45 - 1234','Thin-Jam Hex Nut 14',' We Are Kindred 12 Lydia Maxi Skirt','00:00.0','00:00.0','1001563','ANNA','MEADOWS','USA','ph: 6182742000','EUGENIUS.H@SCHNUCKS.COM'),
+	 (26,'31 - 4263','Thin-Jam Hex Nut 7',' Agronauti By Verdeparallelo Around 8 Cm In Diameter Konjac Root And Bamboo Charcoal','00:00.0','00:00.0','1001569','JUNIA','LONEY','U.S.A','ph: 2173512600','JUNIA.L@SCHNUCKS.COM'),
+	 (27,'89 - 8841','Thin-Jam Hex Nut 8',' Agronauti By Verdeparallelo Around 8 Cm In Diameter Konjac Root','00:00.0','00:00.0','1001601','GIOVANNA','KIKUCHI','USA','ph: 6362402303','GIOVANNA.K@SHOPNSAVE.CO.UK'),
+	 (28,'29 - 2698','Thin-Jam Hex Nut 12',' Agronauti By Verdeparallelo Around 13.5 Cm In Length Konjac Root','00:00.0','00:00.0','1001620','CHERLYN','LAHR','USA','ph: 8453367800','CHERLYN.LAHR@SHOPRITE.COM'),
+	 (29,'60 - 1198','Thin-Jam Hex Nut 11',' Agronauti By Verdeparallelo 20 Cm By 4.5 Cm Fine-Tooth Ash Wood Comb','00:00.0','00:00.0','1001625','SARAH','NELSON','USA','phone: 6106964066','SGOTO@SHOPRITE.COM'),
+	 (30,'14 - 3951','Hex Nut 5',' Agronauti By Verdeparallelo 20 Cm By 4.5 Cm Wide-Tooth Ash Wood Comb','00:00.0','00:00.0','1001628','KENNETH','YOUNGQUIST','AMERICA','ph: 6126287256','KEN@SIMS_DELTEC_INC.COM');
+INSERT INTO public.item_detail_clean (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (31,'83 - 0065','Hex Nut 6',' Agronauti By Verdeparallelo 6.5 Cm By 12 Cm Bath Ash Wood Brush With Coconut Bristles','00:00.0','00:00.0','1001665','MADALINE','HOLZ','AMERICA','ph: 1231234547','MADALINE_HOLZ@SPARTANSTORES.COM'),
+	 (32,'57 - 0676','Hex Nut 16',' Agronauti By Verdeparallelo 38 Cm By 6.5 Cm Bath Ash Wood Brush With Coconut Bristles And Handle','00:00.0','00:00.0','1001678','MARTIN','SMITH','USA','ph: 1235678931','MARTIN@SPARTANSTORES.COM'),
+	 (94,'90 - 2199','Lock Washer 4',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
+	 (33,'53 - 8677','Hex Nut 17',' Rml Brow','00:00.0','00:00.0','1001707','RICK','PHILLIPS','AMERICA','ph: 8042252645','RICK@STATE_OF_VIRGINIA.COM'),
+	 (34,'70 - 8957','Hex Nut 7',' Nutralab Canada Ltd. Glucosamine Flex','00:00.0','00:00.0','1001723','EVAN','HASELHORST','USA','ph: 4024433340','EVAN_HASELHORST@NASHFINCH.COM'),
+	 (35,'60 - 2775','Hex Nut 8',' Blonde Brothers Lights & Shadows','00:00.0','00:00.0','1001729','ZELDA','DECHICK','U.S.A','ph: 7012775566','ZELDA_DECHICK@NASHFINCH.COM'),
+	 (36,'32 - 5195','Hex Nut 9',' Blonde Brothers Brucia','00:00.0','00:00.0','1001732','MARGA','JANOWSKI','AMERICA','ph: 3027984557','MARGA.JANOWSKI@APTEA.COM'),
+	 (37,'38 - 9250','Adjustable Race',' Antarctic Supply Co.Ltd. 500ml Expedition Ale','00:00.0','00:00.0','1001733','EMERSEN','BALLOW','U.S.A','ph: 3026544948','EMERSEN.B@APTEA.COM'),
+	 (38,'80 - 3575','Bearing Ball',' Nuccia Romant?Ca - Giorgio Tirabassi','00:00.0','00:00.0','1001751','LISSY','LINDEMAN','USA','ph: 2059431997','LISSY_LINDEMAN@SUPERPETZ.COM'),
+	 (39,'82 - 3581','BB Ball Bearing',' Send Me Home Luggage Pack','00:00.0','00:00.0','1001774','MADY','EILAND','AMERICA','ph: 8149496458','MADY.E@SUPERPETZ.COM');
+INSERT INTO public.item_detail_clean (product_number,product_id,product_name,product_desc,launch_date,renewal_date,owner_id,po_first_name,po_last_name,origin_country,contact_number,email) VALUES
+	 (40,'47 - 7410','Headset Ball Bearings',' Isylei Lilla Isylei Sporty, Lilla - Cono Ladyp In Silicone Medicale Per La Minzione Femminile, Completo Di Cappuccio Salvagoccia E Compact Sp','00:00.0','00:00.0','1001783','BRUCE','WEBB','USA','ph: 8438328730','SUPERPETZ@SUPERPETZ.COM'),
+	 (41,'40 - 4835','Blade',' Hunter Thermastate','00:00.0','00:00.0','1001797','ARLA','EDENS','U.S.A','ph: 5024543243','ARLA_EDENS@SUPERPETZ.COM'),
+	 (42,'40 - 4335','LL Crankarm',' Casting Rod','00:00.0','00:00.0','1001802','DEMETRIA','ULIBARRI','USA','ph: 9373397398','DEMETRIA_ULIBARRI@SUPERPETZ.COM'),
+	 (43,'32 - 5690','ML Crankarm',' Global Tapware Pty Ltd 1 Bag Dual Hob Tap Inlet Hose -Pair','00:00.0','00:00.0','1001808','JOHN','BENJAMIN','USA','phone: 6127814537','JOHN@TEC.COM'),
+	 (44,'95 - 5565','HL Crankarm',' Global Tapware Pty Ltd 1 Bag Spring Guard - J','00:00.0','00:00.0','1001811','NANCY','MATTAUSCH','U.S.A','ph: 7034181030','NANCY@TECHNAUTICS_INC.COM'),
+	 (88,'66 - 4007','Lock Nut 15',' Castlemaine Brewing Company 330ml Castlemaine Red Celtic Red Ale','00:00.0','00:00.0','1000401','FRANCIS','TANG','AMERICA','ph: 2027087833','FRANCIS@DOE.COM'),
+	 (89,'23 - 3088','Lock Nut 4',' Nakedjuice Naked Juice','00:00.0','00:00.0','1000521','SAM','JELLAD','USA','ph: 9726040396','SAM@EDS.COM'),
+	 (90,'92 - 3412','Lock Nut 19',' Nike 11 Air','00:00.0','00:00.0','1000524','ILISE','LECHLER','USA','ph: 3077783018','ILISE.L@NASHFINCH.COM'),
+	 (91,'62 - 7226','Lock Nut 18',' Matthew Mackay/Innerlight Photography A3 Mornington Peninsula Calendar','00:00.0','00:00.0','1000526','LOREDO','SHAW','U.S.A','ph: 6058867490','LH@NASHFINCH.COM'),
+	 (92,'42 - 4827','Lock Ring','(L)X6-1/4""(W)X16-1/16""(H) Green Folding Table (Green) W/O Cup And Tray,00:00.0,00:00.0,1000566,Harrison,Miller,Usa,Ph: 2127360606,Harry@Equate_Inc.Com
+93,51 - 8965,Lower Head Race, Apollo / Qualidux Industrial Co.','(l)x3-1/8""(w)x15""(h) apollo b playmat (bear family)','00:00.0','00:00.0','1000641','ROBBIE','VARETTE','U.S.A','ph: 2022677415');
