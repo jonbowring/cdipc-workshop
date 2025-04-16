@@ -51,6 +51,7 @@ RUN mkdir -m7777 /apps/infa/cdipc
 RUN mkdir -m7777 /apps/infa/idmc
 RUN mkdir -m7777 /apps/infa/keys
 RUN mkdir -m7777 /apps/infa/licenses
+RUN mkdir -p -m7777 /apps/infa/shared
 RUN mkdir -p -m7777 /apps/infa/shared/tgt
 RUN mkdir -m7777 /apps/infa/shared/src
 RUN mkdir -m7777 /apps/infa/shared/config
