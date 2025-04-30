@@ -86,6 +86,7 @@ COPY shared/config/SilentInput_Default.properties /apps/infa/105/SilentInput.pro
 # Prepare the CDI-PC installation files
 WORKDIR /apps/infa/cdipc
 RUN tar -xvf informatica_cdi-pc_server_installer_linux64.tar
+COPY shared/config/SilentInputMigrate.properties /apps/infa/cdipc/SilentInput.properties
 RUN chown -R root /apps/infa/cdipc
 
 # Install the OpenSSH server
