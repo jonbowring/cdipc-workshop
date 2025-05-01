@@ -1,0 +1,12 @@
+MASTER|CustomerID|FirstName|LastName|Email|Phone|Address|City|State|ZipCode
+BANK|CustomerID|BankName|AccountNumber|RoutingNumber|AccountType|BranchAddress|City|State|ZipCode
+MASTER|1001|John|Doe|johndoe@example.com|555-123-4567|123 Main St|Anytown|CA|12345
+BANK|1001|Example Bank|1234567890|987654321|Checking|123 Main St|Anytown|CA|12345
+MASTER|1002|Jane|Smith|janesmith@example.com|555-987-6543|456 Elm St|Othertown|NY|54321
+BANK|1002|Sample Credit Union|0987654321|123456789|Savings|456 Elm St|Othertown|NY|54321
+MASTER|1003|Michael|Johnson|michaeljohnson@example.com|555-555-5555|789 Oak St|Sometown|TX|67890
+BANK|1003|Test Bank|5555555555|111222333|Checking|789 Oak St|Sometown|TX|67890
+MASTER|1004|Emily|Davis|emilydavis@example.com|555-456-7890|101 Pine St|Anothertown|FL|09876
+BANK|1004|Bank of Trials|9998887776|444555666|Checking|101 Pine St|Anothertown|FL|09876
+MASTER|1005|David|Martinez|davidmartinez@example.com|555-321-6548|555 Cedar St|Yourtown|WA|45678
+BANK|1005|Demo Savings Bank|1112223334|555444333|Savings|555 Cedar St|Yourtown|WA|45678
