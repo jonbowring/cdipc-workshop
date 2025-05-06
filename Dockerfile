@@ -14,6 +14,7 @@ RUN yum install -y libselinux.x86_64
 RUN yum install -y libidn.x86_64
 RUN yum install -y libnsl.x86_64
 RUN yum install -y libxcrypt-compat
+RUN yum install -y fontconfig
 #RUN yum install -y postgresql
 RUN yum install -y which
 RUN yum install -y shadow-utils
