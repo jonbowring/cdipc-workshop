@@ -12,6 +12,9 @@ echo "Connecting to the repository..."
 export INFA_HOME="/apps/infa/105"
 /apps/infa/105/server/bin/pmrep connect -r PCRS_DEV -d Domain_cdipc -n Administrator -x infa -s Native
 
+# Create the connections
+/apps/infa/105/server/bin/pmrep createconnection -s Oracle -u foo -p bar -n Oracle_connection -c DUMMY_CONNECT_STRING -l US-ASCII
+
 # Create the repository folders
 echo "Creating the repository folders..."
 /apps/infa/105/server/bin/pmrep createfolder -n Load_Dim_Tables
