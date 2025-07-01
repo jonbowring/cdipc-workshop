@@ -72,6 +72,7 @@ COPY software/agent64_install_ng_ext.*.bin /apps/infa/idmc/agent64_install_ng_ex
 COPY software/informatica_cdi-pc_tls_cert_utility_linux-x64_*.zip /apps/infa/software
 COPY shared/config/odbc.ini /apps/infa/shared/config/odbc.ini
 COPY scripts/init.sh /apps/infa/scripts/init.sh
+COPY scripts/prebuilt.sh /apps/infa/scripts/prebuilt.sh
 COPY profiles/root/.bash_profile /root/.bash_profile
 
 # Prepare the PowerCenter installation files
@@ -98,6 +99,7 @@ COPY shared/config/sshd_config /etc/ssh/sshd_config
 
 # Finishing Up
 RUN chmod +x /apps/infa/scripts/init.sh
+RUN chmod +x /apps/infa/scripts/prebuilt.sh
 RUN chmod +x /apps/infa/idmc/agent64_install_ng_ext.bin
 CMD ["/apps/infa/scripts/init.sh"]
 #ENTRYPOINT ["tail", "-f", "/dev/null"]
