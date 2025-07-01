@@ -3,6 +3,11 @@
 ## Overview
 This document provides a basic outline for using and understanding the CDI-PC Lab Environment application. This setup is designed to simplify multi-container Docker applications.
 
+## Release Notes
+
+### 2025-07-01
+- Updated CDI-PC installer from version 202410 to 202504
+
 ## Student Details
 - Student 1:
     - Admin console: https://cdipcapp:9441/administrator/
