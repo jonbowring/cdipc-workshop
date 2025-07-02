@@ -40,9 +40,6 @@ This document provides a basic outline for using and understanding the CDI-PC La
 
 ## Setup Instructions
 
-## Step 0: Build the image
-sudo docker build -t cdipc/app:latest .
-
 ### Step 1: Add an entry to your hosts file for the cdipcapp server
 Clone this repository to your local machine using the following command:
 
@@ -53,10 +50,39 @@ Clone this repository to your local machine using the following command:
 
 cd /apps/cdipc-lab
 
-### Step 3: Build and Start the Containers
+## Step 1: Build the image
+sudo docker build -t cdipc/app:latest .
+
+### Step 2: Start the Containers
 Use Docker Compose to build and start all the containers defined in the `docker-compose.yml` file:
 
-sudo docker compose up --build --detach
+sudo docker compose up --detach
+
+### Step 3: Create a pre-built snapshot
+#### Remote into one of the running app Containers
+
+sudo docker exec -it <container id> /bin/bash
+
+#### Shutdown the PowerCenter services
+
+cd /apps/infa/105/tomcat/bin
+./infaservice.sh shutdown
+
+### Wait for the services to shutdown and then exit
+ps -ef | grep infa
+exit
+
+#### Create the container image snapshot
+
+sudo docker commit <container id> cdipc/app-prebuilt:latest
+
+### Shutdown the build images
+
+sudo docker compose down
+
+### Start the student containers using the prebuilt image
+
+sudo docker compose -f compose.prebuilt.yaml up --detach
 
 ### Step 4: Access the Application
 It will take ~15 mins to install PowerCenter when the container is created. Once the application is running, you can access the administrator console using the following URL:
