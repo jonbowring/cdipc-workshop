@@ -58,38 +58,12 @@ Use Docker Compose to build and start all the containers defined in the `docker-
 
 sudo docker compose up --detach
 
-### Step 3: Create a pre-built snapshot
-#### Remote into one of the running app Containers
-
-sudo docker exec -it <container id> /bin/bash
-
-#### Shutdown the PowerCenter services
-
-cd /apps/infa/105/tomcat/bin
-./infaservice.sh shutdown
-
-### Wait for the services to shutdown and then exit
-ps -ef | grep infa
-exit
-
-#### Create the container image snapshot
-
-sudo docker commit <container id> cdipc/app-prebuilt:latest
-
-### Shutdown the build images
-
-sudo docker compose down
-
-### Start the student containers using the prebuilt image
-
-sudo docker compose -f compose.prebuilt.yaml up --detach
-
-### Step 4: Access the Application
+### Step 3: Access the Application
 It will take ~15 mins to install PowerCenter when the container is created. Once the application is running, you can access the administrator console using the following URL:
 
 https://cdipcapp:9441/administrator/
 
-### Step 5: Remote into the container
+### Step 4: Remote into the container
 Use the below command to remote into the container:
 
 ssh -p 221 root@cdipcapp
@@ -98,12 +72,12 @@ OR for instructors:
 
 sudo docker exec -it cdipc-lab-cdipcapp-1 /bin/bash
 
-### Step 6: Change into the CDI-PC installation directory
+### Step 5: Change into the CDI-PC installation directory
 Use the below command to change to the CDI-PC installation directory:
 
 cd /apps/infa/cdipc
 
-### Step 7: Run the installer
+### Step 6: Run the installer
 Use the below command to install CDI-PC:
     - PowerCenter install directory = /apps/infa/105
     - CDI-PC install directory = /apps/infa/cdipc
@@ -112,34 +86,34 @@ Use the below command to install CDI-PC:
 
 ./install.sh
 
-### Step 8: Change to the idmc user
+### Step 7: Change to the idmc user
 Before installing the secure agent change to the idmc user with the below command:
 
 su idmc
 
-### Step 9: Change into the secure agent installation directory
+### Step 8: Change into the secure agent installation directory
 Use the below command to change to the secure agent installation directory:
 
 cd /apps/infa/idmc
 
-### Step 10: Run the installer
+### Step 9: Run the installer
 Use the below command to install the secure agent:
     - Install directory = /apps/infa/idmc
 
 ./agent64_install_ng_ext.bin -i console
 
-### Step 11: Change directory and start the secure agent
+### Step 10: Change directory and start the secure agent
 Use the below commands to start the secure agent
 
 cd /apps/infa/idmc/apps/agentcore
 ./infaagent.sh startup
 
-### Step 12: Login to IDMC
+### Step 11: Login to IDMC
 Use the below command to start register the secure agent
 
 ./consoleAgentManager.sh configureToken <user name> <install token>
 
-### Step 13: Enable the secure agent services
+### Step 12: Enable the secure agent services
 Enable the below services and connections on the secure agent group:
 
 - Services:
@@ -150,7 +124,7 @@ Enable the below services and connections on the secure agent group:
 - Connections:
     - PostgreSQL
 
-### Step 14: Configure trust properties
+### Step 13: Configure trust properties
 Configure the following secure agent trust settings on the "Domain Management App" of the secure agent:
 
 - DMA_DOMAINS_COMM_KEYSTORE = /apps/infa/keys/infa_keystore.jks
@@ -158,7 +132,7 @@ Configure the following secure agent trust settings on the "Domain Management Ap
 - DMA_DOMAINS_COMM_TRUSTSTORE = /apps/infa/keys/infa_truststore.jks
 - DMA_DOMAINS_COMM_TRUSTSTORE_PASS = changeit
 
-### Step 15: Create the Data Validation connections
+### Step 14: Create the Data Validation connections
 Create the following connections for use in Data Validation:
 
 - Customer_PostgreSQL:
