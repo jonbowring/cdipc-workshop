@@ -3,29 +3,41 @@
 # Start the OpenSSH server
 /usr/sbin/sshd
 
-# Install PowerCenter
-/apps/infa/105/silentinstall.sh
-echo "Installation complete!"
+# Check if Powercenter has not previously been installed
+if [ ! -f "/apps/infa/105/pc_installed" ]; then
 
-# Connect to the repository
-echo "Connecting to the repository..."
-export INFA_HOME="/apps/infa/105"
-/apps/infa/105/server/bin/pmrep connect -r PCRS_DEV -d Domain_cdipc -n Administrator -x infa -s Native
+    # Install PowerCenter
+    /apps/infa/105/silentinstall.sh
+    echo "Installation complete!"
 
-# Create the connections
-/apps/infa/105/server/bin/pmrep createconnection -s Oracle -u foo -p bar -n Oracle_connection -c DUMMY_CONNECT_STRING -l US-ASCII
+    # Connect to the repository
+    echo "Connecting to the repository..."
+    export INFA_HOME="/apps/infa/105"
+    /apps/infa/105/server/bin/pmrep connect -r PCRS_DEV -d Domain_cdipc -n Administrator -x infa -s Native
 
-# Create the repository folders
-echo "Creating the repository folders..."
-/apps/infa/105/server/bin/pmrep createfolder -n Load_Dim_Tables
-/apps/infa/105/server/bin/pmrep createfolder -n Load_Fact_Tables
-/apps/infa/105/server/bin/pmrep createfolder -n Stage_Tables
+    # Create the connections
+    /apps/infa/105/server/bin/pmrep createconnection -s Oracle -u foo -p bar -n Oracle_connection -c DUMMY_CONNECT_STRING -l US-ASCII
 
-# Import the repository objects
-echo "Importing the repository objects..."
-/apps/infa/105/server/bin/pmrep objectimport -i /apps/infa/shared/config/Load_Dim_Tables.XML -c /apps/infa/shared/config/pc_import_control_file_Dim.xml
-/apps/infa/105/server/bin/pmrep objectimport -i /apps/infa/shared/config/Load_Fact_Tables.XML -c /apps/infa/shared/config/pc_import_control_file_Fact.xml
-/apps/infa/105/server/bin/pmrep objectimport -i /apps/infa/shared/config/Stage_Tables.XML -c /apps/infa/shared/config/pc_import_control_file_Stage.xml
+    # Create the repository folders
+    echo "Creating the repository folders..."
+    /apps/infa/105/server/bin/pmrep createfolder -n Load_Dim_Tables
+    /apps/infa/105/server/bin/pmrep createfolder -n Load_Fact_Tables
+    /apps/infa/105/server/bin/pmrep createfolder -n Stage_Tables
+
+    # Import the repository objects
+    echo "Importing the repository objects..."
+    /apps/infa/105/server/bin/pmrep objectimport -i /apps/infa/shared/config/Load_Dim_Tables.XML -c /apps/infa/shared/config/pc_import_control_file_Dim.xml
+    /apps/infa/105/server/bin/pmrep objectimport -i /apps/infa/shared/config/Load_Fact_Tables.XML -c /apps/infa/shared/config/pc_import_control_file_Fact.xml
+    /apps/infa/105/server/bin/pmrep objectimport -i /apps/infa/shared/config/Stage_Tables.XML -c /apps/infa/shared/config/pc_import_control_file_Stage.xml
+
+    # Create an indicator file to confirm Powercenter is already installed
+    touch /apps/infa/105/pc_installed
+
+else
+    # Copy the site key and restart PowerCenter
+    cp /apps/infa/105/isp/config/keys/siteKey /apps/infa/105/isp/config/keys/siteKey_old
+
+fi
 
 # Keep the container running
 echo "Done!" &
