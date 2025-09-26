@@ -58,6 +58,85 @@ Use Docker Compose to build and start all the containers defined in the `docker-
 
 sudo docker compose up --detach
 
+### Take a backup of the siteKey
+
+IMPORTANT!!!!!! Everytime you commit a new pre-built image, you need to ensure that the database backup is aligned with the image
+
+Take a backup of the siteKey. For example:
+
+sudo docker cp 72c6530e871c:/apps/infa/105/isp/config/keys/siteKey .
+
+### Backup the database. For example:
+
+sudo docker exec -it 6b7203e34773 /bin/bash
+cd /tmp
+pg_dumpall -h localhost -U infa > postgres_backup.sql
+exit
+sudo docker cp 6b7203e34773:/tmp/postgres_backup.sql .
+
+### Comment out the SQL statements for the infa database
+For example:
+
+--CREATE ROLE infa;
+--ALTER ROLE infa WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS PASSWORD 'SCRAM-SHA-256$4096:J3GakfSL+GcocBZvauhKVQ==$IjHy3JpuAmnZ6MsZh0oJpIw3gNdFUbhAWEw9NRa25fQ=:7Osz+tZ7ENnDiRIc/cG5b0bqa2QYTGFOidHWffzDgyM=';
+
+..................
+
+/*
+--
+-- Database "infa" dump
+--
+
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.3
+-- Dumped by pg_dump version 14.3
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: infa; Type: DATABASE; Schema: -; Owner: infa
+--
+
+CREATE DATABASE infa WITH TEMPLATE = template0 ENCODING = 'UTF8' LOCALE = 'en_US.utf8';
+
+
+ALTER DATABASE infa OWNER TO infa;
+
+\connect infa
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- PostgreSQL database dump complete
+--
+*/
+
+### Commit the newly built app image
+sudo docker commit 72c6530e871c cdipc/prebuilt:latest
+
+------------------------------------------
+
 ### Step 3: Access the Application
 It will take ~15 mins to install PowerCenter when the container is created. Once the application is running, you can access the administrator console using the following URL:
 

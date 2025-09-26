@@ -2,8 +2,7 @@ services:
   
   # Template + Student 1
   app1: &app1
-    #build: .
-    image: "cdipc/app:latest"
+    image: "cdipc/build:latest"
     restart: always
     tty: true
     hostname: cdipcapp
