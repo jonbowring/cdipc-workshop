@@ -2,8 +2,7 @@ services:
   
   # Template + Student 1
   app1: &app1
-    #build: .
-    image: "cdipc/pc:latest"
+    image: "cdipc/build:latest"
     restart: always
     tty: true
     hostname: cdipcapp
@@ -18,7 +17,7 @@ services:
       - net1
 
   db1: &db1
-    image: "cdipc/db:latest"
+    image: "postgres:14.3-alpine"
     restart: always
     shm_size: 128mb
     hostname: cdipcdb
