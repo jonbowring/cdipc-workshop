@@ -1,0 +1,250 @@
+[
+    {
+        "name": "Instructor",
+        "host": "CDI-PC-Workshop-Server-1",
+        "sshPort": "220",
+        "adminPort": "8443",
+        "dbPort": "7430",
+        "app": "app0"
+    },
+    {
+        "name": "Student01",
+        "host": "CDI-PC-Workshop-Server-1",
+        "sshPort": "221",
+        "adminPort": "9441",
+        "dbPort": "7431",
+        "app": "app1"
+    },
+    {
+        "name": "Student02",
+        "host": "CDI-PC-Workshop-Server-1",
+        "sshPort": "222",
+        "adminPort": "9442",
+        "dbPort": "7432",
+        "app": "app2"
+    },
+    {
+        "name": "Student03",
+        "host": "CDI-PC-Workshop-Server-1",
+        "sshPort": "223",
+        "adminPort": "9443",
+        "dbPort": "7433",
+        "app": "app3"
+    },
+    {
+        "name": "Student04",
+        "host": "CDI-PC-Workshop-Server-1",
+        "sshPort": "224",
+        "adminPort": "9444",
+        "dbPort": "7434",
+        "app": "app4"
+    },
+    {
+        "name": "Student05",
+        "host": "CDI-PC-Workshop-Server-1",
+        "sshPort": "225",
+        "adminPort": "9445",
+        "dbPort": "7435",
+        "app": "app5"
+    },
+    {
+        "name": "Student06",
+        "host": "CDI-PC-Workshop-Server-1",
+        "sshPort": "226",
+        "adminPort": "9446",
+        "dbPort": "7436",
+        "app": "app6"
+    },
+    {
+        "name": "Student07",
+        "host": "CDI-PC-Workshop-Server-2",
+        "sshPort": "221",
+        "adminPort": "9441",
+        "dbPort": "7431",
+        "app": "app1"
+    },
+    {
+        "name": "Student08",
+        "host": "CDI-PC-Workshop-Server-2",
+        "sshPort": "222",
+        "adminPort": "9442",
+        "dbPort": "7432",
+        "app": "app2"
+    },
+    {
+        "name": "Student09",
+        "host": "CDI-PC-Workshop-Server-2",
+        "sshPort": "223",
+        "adminPort": "9443",
+        "dbPort": "7433",
+        "app": "app3"
+    },
+    {
+        "name": "Student10",
+        "host": "CDI-PC-Workshop-Server-2",
+        "sshPort": "224",
+        "adminPort": "9444",
+        "dbPort": "7434",
+        "app": "app4"
+    },
+    {
+        "name": "Student11",
+        "host": "CDI-PC-Workshop-Server-2",
+        "sshPort": "225",
+        "adminPort": "9445",
+        "dbPort": "7435",
+        "app": "app5"
+    },
+    {
+        "name": "Student12",
+        "host": "CDI-PC-Workshop-Server-2",
+        "sshPort": "226",
+        "adminPort": "9446",
+        "dbPort": "7436",
+        "app": "app6"
+    },
+    {
+        "name": "Student13",
+        "host": "CDI-PC-Workshop-Server-3",
+        "sshPort": "221",
+        "adminPort": "9441",
+        "dbPort": "7431",
+        "app": "app1"
+    },
+    {
+        "name": "Student14",
+        "host": "CDI-PC-Workshop-Server-3",
+        "sshPort": "222",
+        "adminPort": "9442",
+        "dbPort": "7432",
+        "app": "app2"
+    },
+    {
+        "name": "Student15",
+        "host": "CDI-PC-Workshop-Server-3",
+        "sshPort": "223",
+        "adminPort": "9443",
+        "dbPort": "7433",
+        "app": "app3"
+    },
+    {
+        "name": "Student16",
+        "host": "CDI-PC-Workshop-Server-3",
+        "sshPort": "224",
+        "adminPort": "9444",
+        "dbPort": "7434",
+        "app": "app4"
+    },
+    {
+        "name": "Student17",
+        "host": "CDI-PC-Workshop-Server-3",
+        "sshPort": "225",
+        "adminPort": "9445",
+        "dbPort": "7435",
+        "app": "app5"
+    },
+    {
+        "name": "Student18",
+        "host": "CDI-PC-Workshop-Server-3",
+        "sshPort": "226",
+        "adminPort": "9446",
+        "dbPort": "7436",
+        "app": "app6"
+    },
+    {
+        "name": "Student19",
+        "host": "CDI-PC-Workshop-Server-4",
+        "sshPort": "221",
+        "adminPort": "9441",
+        "dbPort": "7431",
+        "app": "app1"
+    },
+    {
+        "name": "Student20",
+        "host": "CDI-PC-Workshop-Server-4",
+        "sshPort": "222",
+        "adminPort": "9442",
+        "dbPort": "7432",
+        "app": "app2"
+    },
+    {
+        "name": "Student21",
+        "host": "CDI-PC-Workshop-Server-4",
+        "sshPort": "223",
+        "adminPort": "9443",
+        "dbPort": "7433",
+        "app": "app3"
+    },
+    {
+        "name": "Student22",
+        "host": "CDI-PC-Workshop-Server-4",
+        "sshPort": "224",
+        "adminPort": "9444",
+        "dbPort": "7434",
+        "app": "app4"
+    },
+    {
+        "name": "Student23",
+        "host": "CDI-PC-Workshop-Server-4",
+        "sshPort": "225",
+        "adminPort": "9445",
+        "dbPort": "7435",
+        "app": "app5"
+    },
+    {
+        "name": "Student24",
+        "host": "CDI-PC-Workshop-Server-4",
+        "sshPort": "226",
+        "adminPort": "9446",
+        "dbPort": "7436",
+        "app": "app6"
+    },
+    {
+        "name": "Student25",
+        "host": "CDI-PC-Workshop-Server-5",
+        "sshPort": "221",
+        "adminPort": "9441",
+        "dbPort": "7431",
+        "app": "app1"
+    },
+    {
+        "name": "Student26",
+        "host": "CDI-PC-Workshop-Server-5",
+        "sshPort": "222",
+        "adminPort": "9442",
+        "dbPort": "7432",
+        "app": "app2"
+    },
+    {
+        "name": "Student27",
+        "host": "CDI-PC-Workshop-Server-5",
+        "sshPort": "223",
+        "adminPort": "9443",
+        "dbPort": "7433",
+        "app": "app3"
+    },
+    {
+        "name": "Student28",
+        "host": "CDI-PC-Workshop-Server-5",
+        "sshPort": "224",
+        "adminPort": "9444",
+        "dbPort": "7434",
+        "app": "app4"
+    },
+    {
+        "name": "Student29",
+        "host": "CDI-PC-Workshop-Server-5",
+        "sshPort": "225",
+        "adminPort": "9445",
+        "dbPort": "7435",
+        "app": "app5"
+    },
+    {
+        "name": "Student30",
+        "host": "CDI-PC-Workshop-Server-5",
+        "sshPort": "226",
+        "adminPort": "9446",
+        "dbPort": "7436",
+        "app": "app6"
+    }
+]
