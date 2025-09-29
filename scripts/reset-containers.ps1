@@ -1,14 +1,36 @@
-Write-Output "`nResetting students 1 to 6...."
-ssh -i "CDI-PC-Workshop.pem" ec2-user@CDI-PC-Workshop-Server-1 "cd /apps/cdipc-workshop; sudo docker compose down; sudo docker system prune -f; sudo docker compose up --detach"
+param (
+	[int]$From = 0,
+	[int]$To = 30
+)
 
-Write-Output "`nResetting students 7 to 12...."
-ssh -i "CDI-PC-Workshop.pem" ec2-user@CDI-PC-Workshop-Server-2 "cd /apps/cdipc-workshop; sudo docker compose down; sudo docker system prune -f; sudo docker compose up --detach"
+# Clear the known hosts file
+Clear-Content -Path "C:\Users\Administrator\.ssh\known_hosts"
 
-Write-Output "`nResetting students 13 to 18...."
-ssh -i "CDI-PC-Workshop.pem" ec2-user@CDI-PC-Workshop-Server-3 "cd /apps/cdipc-workshop; sudo docker compose down; sudo docker system prune -f; sudo docker compose up --detach"
+# Read the environments json file
+$json = Get-Content -Raw -Path "environments.json"
+$envs = $json | ConvertFrom-Json
+$envs = $envs[$From..$To]
 
-Write-Output "`nResetting students 19 to 24...."
-ssh -i "CDI-PC-Workshop.pem" ec2-user@CDI-PC-Workshop-Server-4 "cd /apps/cdipc-workshop; sudo docker compose down; sudo docker system prune -f; sudo docker compose up --detach"
+# Define connection parameters
+$User = "root"
+$Password = "root"
+$Command = "source /root/.bash_profile; cd /apps/infa/105/tomcat/bin; ./infaservice.sh startup"
 
-Write-Output "`nResetting students 25 to 30...."
-ssh -i "CDI-PC-Workshop.pem" ec2-user@CDI-PC-Workshop-Server-5 "cd /apps/cdipc-workshop; sudo docker compose down; sudo docker system prune -f; sudo docker compose up --detach"
+# Convert password to a secure string
+$SecurePassword = ConvertTo-SecureString $Password -AsPlainText -Force
+
+# Create a PSCredential object
+$Credential = New-Object System.Management.Automation.PSCredential($User, $SecurePassword)
+
+# Loop through the environments and reset them
+foreach($obj in $envs) {
+	Write-Output "`nResetting $($obj.name)..."
+	ssh -i "CDI-PC-Workshop.pem" ec2-user@CDI-PC-Workshop-Server-1 "cd /apps/cdipc-workshop; sudo docker compose down $($obj.app); sudo docker system prune -f; sudo docker compose up --detach $($obj.app)"
+	Write-Output "Waiting for database to start..."
+	Start-Sleep -Seconds 5
+	
+	Write-Output "Starting PowerCenter for $($obj.name)..."
+	$Session = New-SSHSession -ComputerName $obj.host -Credential $Credential -Port $obj.port
+	Invoke-SSHCommand -SSHSession $Session -Command $Command | Select-Object -ExpandProperty Output
+	Remove-SSHSession -SSHSession $Session
+}
