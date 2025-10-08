@@ -52,21 +52,21 @@ foreach($obj in $envs) {
 	}
 	
 	# Test the repository service
-	$Command = 'source /root/.bash_profile; /apps/infa/105/server/bin/infacmd.sh GetServiceStatus -dn "Domain_cdipc" -un "Administrator" -pd "infa" -sdn "Native" -hp "cdipcapp:6005" -sn "PCRS_DEV"'
+	$Command = 'source /root/.bash_profile; /apps/infa/105/server/bin/infacmd.sh ping -dn "Domain_cdipc" -dg "cdipcapp:6005" -sn "PCRS_DEV" -nn "NodeName"'
 	$Result = Invoke-SSHCommand -SSHSession $Session -Command $Command | Select-Object -ExpandProperty Output
-	if($Result -match "Enabled") {
+	if($Result -match "was successfully pinged") {
 		Write-Output "PowerCenter Repository Service.... [PASS]"
 	} else {
 		Write-Output "PowerCenter Repository Service.... [FAILED]"
 	}
 	
 	# Test the integration service
-	$Command = 'source /root/.bash_profile; /apps/infa/105/server/bin/infacmd.sh GetServiceStatus -dn "Domain_cdipc" -un "Administrator" -pd "infa" -sdn "Native" -hp "cdipcapp:6005" -sn "PCIS_DEV"'
+	$Command = 'source /root/.bash_profile; /apps/infa/105/server/bin/infacmd.sh ping -dn "Domain_cdipc" -dg "cdipcapp:6005" -sn "PCIS_DEV" -nn "NodeName"'
 	$Result = Invoke-SSHCommand -SSHSession $Session -Command $Command | Select-Object -ExpandProperty Output
-	if($Result -match "Enabled") {
-		Write-Output "PowerCenter Repository Service.... [PASS]"
+	if($Result -match "was successfully pinged") {
+		Write-Output "PowerCenter Integration Service.... [PASS]"
 	} else {
-		Write-Output "PowerCenter Repository Service.... [FAILED]"
+		Write-Output "PowerCenter Integration Service.... [FAILED]"
 	}
 	
 	# Close the session
