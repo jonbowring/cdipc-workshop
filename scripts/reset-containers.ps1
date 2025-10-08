@@ -25,12 +25,12 @@ $Credential = New-Object System.Management.Automation.PSCredential($User, $Secur
 # Loop through the environments and reset them
 foreach($obj in $envs) {
 	Write-Output "`nResetting $($obj.name)..."
-	ssh -i "CDI-PC-Workshop.pem" ec2-user@CDI-PC-Workshop-Server-1 "cd /apps/cdipc-workshop; sudo docker compose down $($obj.app); sudo docker system prune -f; sudo docker compose up --detach $($obj.app)"
+	ssh -i "CDI-PC-Workshop.pem" ec2-user@CDI-PC-Workshop-Server-1 "cd /apps/cdipc-workshop; sudo docker compose stop $($obj.app); sudo docker compose stop $($obj.db); sudo docker compose down $($obj.app); sudo docker system prune -f; sudo docker compose up --detach $($obj.app)"
 	Write-Output "Waiting for database to start..."
 	Start-Sleep -Seconds 5
 	
 	Write-Output "Starting PowerCenter for $($obj.name)..."
-	$Session = New-SSHSession -ComputerName $obj.host -Credential $Credential -Port $obj.port
+	$Session = New-SSHSession -ComputerName $obj.host -Credential $Credential -Port $obj.sshPort
 	Invoke-SSHCommand -SSHSession $Session -Command $Command | Select-Object -ExpandProperty Output
 	Remove-SSHSession -SSHSession $Session
 }

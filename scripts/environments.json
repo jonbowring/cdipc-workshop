@@ -5,7 +5,8 @@
         "sshPort": "220",
         "adminPort": "8443",
         "dbPort": "7430",
-        "app": "app0"
+        "app": "app0",
+		"db": "db0"
     },
     {
         "name": "Student01",
@@ -13,7 +14,9 @@
         "sshPort": "221",
         "adminPort": "9441",
         "dbPort": "7431",
-        "app": "app1"
+        "app": "app1",
+		"db": "db1"
+		
     },
     {
         "name": "Student02",
@@ -21,7 +24,8 @@
         "sshPort": "222",
         "adminPort": "9442",
         "dbPort": "7432",
-        "app": "app2"
+        "app": "app2",
+		"db": "db2"
     },
     {
         "name": "Student03",
@@ -29,7 +33,8 @@
         "sshPort": "223",
         "adminPort": "9443",
         "dbPort": "7433",
-        "app": "app3"
+        "app": "app3",
+		"db": "db3"
     },
     {
         "name": "Student04",
@@ -37,7 +42,8 @@
         "sshPort": "224",
         "adminPort": "9444",
         "dbPort": "7434",
-        "app": "app4"
+        "app": "app4",
+		"db": "db4"
     },
     {
         "name": "Student05",
@@ -45,7 +51,8 @@
         "sshPort": "225",
         "adminPort": "9445",
         "dbPort": "7435",
-        "app": "app5"
+        "app": "app5",
+		"db": "db5"
     },
     {
         "name": "Student06",
@@ -53,7 +60,8 @@
         "sshPort": "226",
         "adminPort": "9446",
         "dbPort": "7436",
-        "app": "app6"
+        "app": "app6",
+		"db": "db6"
     },
     {
         "name": "Student07",
@@ -61,7 +69,8 @@
         "sshPort": "221",
         "adminPort": "9441",
         "dbPort": "7431",
-        "app": "app1"
+        "app": "app1",
+		"db": "db1"
     },
     {
         "name": "Student08",
@@ -69,7 +78,8 @@
         "sshPort": "222",
         "adminPort": "9442",
         "dbPort": "7432",
-        "app": "app2"
+        "app": "app2",
+		"db": "db2"
     },
     {
         "name": "Student09",
@@ -77,7 +87,8 @@
         "sshPort": "223",
         "adminPort": "9443",
         "dbPort": "7433",
-        "app": "app3"
+        "app": "app3",
+		"db": "db3"
     },
     {
         "name": "Student10",
@@ -85,7 +96,8 @@
         "sshPort": "224",
         "adminPort": "9444",
         "dbPort": "7434",
-        "app": "app4"
+        "app": "app4",
+		"db": "db4"
     },
     {
         "name": "Student11",
@@ -93,7 +105,8 @@
         "sshPort": "225",
         "adminPort": "9445",
         "dbPort": "7435",
-        "app": "app5"
+        "app": "app5",
+		"db": "db5"
     },
     {
         "name": "Student12",
@@ -101,7 +114,8 @@
         "sshPort": "226",
         "adminPort": "9446",
         "dbPort": "7436",
-        "app": "app6"
+        "app": "app6",
+		"db": "db6"
     },
     {
         "name": "Student13",
@@ -109,7 +123,8 @@
         "sshPort": "221",
         "adminPort": "9441",
         "dbPort": "7431",
-        "app": "app1"
+        "app": "app1",
+		"db": "db1"
     },
     {
         "name": "Student14",
@@ -117,7 +132,8 @@
         "sshPort": "222",
         "adminPort": "9442",
         "dbPort": "7432",
-        "app": "app2"
+        "app": "app2",
+		"db": "db2"
     },
     {
         "name": "Student15",
@@ -125,7 +141,8 @@
         "sshPort": "223",
         "adminPort": "9443",
         "dbPort": "7433",
-        "app": "app3"
+        "app": "app3",
+		"db": "db3"
     },
     {
         "name": "Student16",
@@ -133,7 +150,8 @@
         "sshPort": "224",
         "adminPort": "9444",
         "dbPort": "7434",
-        "app": "app4"
+        "app": "app4",
+		"db": "db4"
     },
     {
         "name": "Student17",
@@ -141,7 +159,8 @@
         "sshPort": "225",
         "adminPort": "9445",
         "dbPort": "7435",
-        "app": "app5"
+        "app": "app5",
+		"db": "db5"
     },
     {
         "name": "Student18",
@@ -149,7 +168,8 @@
         "sshPort": "226",
         "adminPort": "9446",
         "dbPort": "7436",
-        "app": "app6"
+        "app": "app6",
+		"db": "db6"
     },
     {
         "name": "Student19",
@@ -157,7 +177,8 @@
         "sshPort": "221",
         "adminPort": "9441",
         "dbPort": "7431",
-        "app": "app1"
+        "app": "app1",
+		"db": "db1"
     },
     {
         "name": "Student20",
@@ -165,7 +186,8 @@
         "sshPort": "222",
         "adminPort": "9442",
         "dbPort": "7432",
-        "app": "app2"
+        "app": "app2",
+		"db": "db2"
     },
     {
         "name": "Student21",
@@ -173,7 +195,8 @@
         "sshPort": "223",
         "adminPort": "9443",
         "dbPort": "7433",
-        "app": "app3"
+        "app": "app3",
+		"db": "db3"
     },
     {
         "name": "Student22",
@@ -181,7 +204,8 @@
         "sshPort": "224",
         "adminPort": "9444",
         "dbPort": "7434",
-        "app": "app4"
+        "app": "app4",
+		"db": "db4"
     },
     {
         "name": "Student23",
@@ -189,7 +213,8 @@
         "sshPort": "225",
         "adminPort": "9445",
         "dbPort": "7435",
-        "app": "app5"
+        "app": "app5",
+		"db": "db5"
     },
     {
         "name": "Student24",
@@ -197,7 +222,8 @@
         "sshPort": "226",
         "adminPort": "9446",
         "dbPort": "7436",
-        "app": "app6"
+        "app": "app6",
+		"db": "db6"
     },
     {
         "name": "Student25",
@@ -205,7 +231,8 @@
         "sshPort": "221",
         "adminPort": "9441",
         "dbPort": "7431",
-        "app": "app1"
+        "app": "app1",
+		"db": "db1"
     },
     {
         "name": "Student26",
@@ -213,7 +240,8 @@
         "sshPort": "222",
         "adminPort": "9442",
         "dbPort": "7432",
-        "app": "app2"
+        "app": "app2",
+		"db": "db2"
     },
     {
         "name": "Student27",
@@ -221,7 +249,8 @@
         "sshPort": "223",
         "adminPort": "9443",
         "dbPort": "7433",
-        "app": "app3"
+        "app": "app3",
+		"db": "db3"
     },
     {
         "name": "Student28",
@@ -229,7 +258,8 @@
         "sshPort": "224",
         "adminPort": "9444",
         "dbPort": "7434",
-        "app": "app4"
+        "app": "app4",
+		"db": "db4"
     },
     {
         "name": "Student29",
@@ -237,7 +267,8 @@
         "sshPort": "225",
         "adminPort": "9445",
         "dbPort": "7435",
-        "app": "app5"
+        "app": "app5",
+		"db": "db5"
     },
     {
         "name": "Student30",
@@ -245,6 +276,7 @@
         "sshPort": "226",
         "adminPort": "9446",
         "dbPort": "7436",
-        "app": "app6"
+        "app": "app6",
+		"db": "db6"
     }
 ]
