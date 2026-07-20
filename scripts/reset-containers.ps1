@@ -3,6 +3,9 @@ param (
 	[int]$To = 30
 )
 
+# Reset the trusted host
+Get-SSHTrustedHost | Remove-SSHTrustedHost
+
 # Clear the known hosts file
 Clear-Content -Path "C:\Users\Administrator\.ssh\known_hosts"
 
