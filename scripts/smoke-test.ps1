@@ -3,6 +3,9 @@ param (
 	[int]$To = 30
 )
 
+# Reset the trusted host
+Get-SSHTrustedHost | Remove-SSHTrustedHost
+
 # Read the environments json file
 $json = Get-Content -Raw -Path "environments.json"
 $envs = $json | ConvertFrom-Json
