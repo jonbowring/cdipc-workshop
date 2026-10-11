@@ -81,15 +81,15 @@ WORKDIR /apps/infa/105/server/bin
 RUN ln -s /usr/lib64/libnsl.so.2  /apps/infa/105/server/bin/libnsl.so.1
 RUN ln -s /usr/lib64/libidn.so.12 /usr/lib64/libidn.so.11
 WORKDIR /apps/infa/105
-RUN --mount=type=bind,source=software/informatica_1053_server_linux-x64.tar,target=/apps/infa/105/informatica_1053_server_linux-x64.tar \
-    tar -xvf /apps/infa/105/informatica_1053_server_linux-x64.tar
+RUN --mount=type=bind,source=software/informatica_1053_server_linux-x64.tar,target=/tmp/105/informatica_1053_server_linux-x64.tar \
+    tar -xvf /tmp/informatica_1053_server_linux-x64.tar -C /apps/infa/105
 RUN cp SilentInput.properties SilentInput.properties.backup
 COPY shared/config/SilentInput_Default.properties /apps/infa/105/SilentInput.properties
 
 # Prepare the CDI-PC installation files
 WORKDIR /apps/infa/cdipc
-RUN --mount=type=bind,source=software,target=/apps/infa/cdipc \
-    tar -xvf /apps/infa/cdipc/informatica_cdi-pc_server_installer_linux64_*.tar
+RUN --mount=type=bind,source=software,target=/tmp/cdipc \
+    tar -xvf /tmp/cdipc/informatica_cdi-pc_server_installer_linux64_*.tar -C /apps/infa/cdipc
 COPY shared/config/SilentInputMigrate.properties /apps/infa/cdipc/SilentInput.properties
 RUN chown -R root /apps/infa/cdipc
 
