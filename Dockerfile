@@ -63,11 +63,13 @@ RUN mkdir -m7777 /apps/infa/scripts
 RUN chown -R idmc:root /apps/infa/idmc
 
 # Copy the pre-requisite files
+# NOTE: The large installer tars (informatica_1053_server_linux-x64.tar and
+# informatica_cdi-pc_server_installer_linux64_*.tar) are NOT copied here. They
+# are bind-mounted at extraction time (see below) so they never get committed
+# to an image layer, keeping the final image small.
 COPY licenses /apps/infa/licenses
 COPY shared /apps/infa/shared
 COPY keys /apps/infa/keys
-COPY software/informatica_1053_server_linux-x64.tar /apps/infa/105/informatica_1053_server_linux-x64.tar
-COPY software/informatica_cdi-pc_server_installer_linux64_*.tar /apps/infa/cdipc/informatica_cdi-pc_server_installer_linux64.tar
 COPY software/agent64_install_ng_ext.*.bin /apps/infa/idmc/agent64_install_ng_ext.bin
 COPY software/informatica_cdi-pc_tls_cert_utility_linux-x64_*.zip /apps/infa/software
 COPY shared/config/odbc.ini /apps/infa/shared/config/odbc.ini
@@ -79,14 +81,15 @@ WORKDIR /apps/infa/105/server/bin
 RUN ln -s /usr/lib64/libnsl.so.2  /apps/infa/105/server/bin/libnsl.so.1
 RUN ln -s /usr/lib64/libidn.so.12 /usr/lib64/libidn.so.11
 WORKDIR /apps/infa/105
-RUN tar -xvf informatica_1053_server_linux-x64.tar
-RUN rm -f informatica_1053_server_linux-x64.tar
+RUN --mount=type=bind,source=software/informatica_1053_server_linux-x64.tar,target=/apps/infa/105/informatica_1053_server_linux-x64.tar \
+    tar -xvf /apps/infa/105/informatica_1053_server_linux-x64.tar
 RUN cp SilentInput.properties SilentInput.properties.backup
 COPY shared/config/SilentInput_Default.properties /apps/infa/105/SilentInput.properties
 
 # Prepare the CDI-PC installation files
 WORKDIR /apps/infa/cdipc
-RUN tar -xvf informatica_cdi-pc_server_installer_linux64.tar
+RUN --mount=type=bind,source=software,target=/apps/infa/cdipc \
+    tar -xvf /apps/infa/cdipc/informatica_cdi-pc_server_installer_linux64_*.tar
 COPY shared/config/SilentInputMigrate.properties /apps/infa/cdipc/SilentInput.properties
 RUN chown -R root /apps/infa/cdipc
 
