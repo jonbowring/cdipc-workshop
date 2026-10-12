@@ -82,7 +82,7 @@ RUN ln -s /usr/lib64/libnsl.so.2  /apps/infa/105/server/bin/libnsl.so.1
 RUN ln -s /usr/lib64/libidn.so.12 /usr/lib64/libidn.so.11
 WORKDIR /apps/infa/105
 RUN --mount=type=bind,source=software/informatica_1053_server_linux-x64.tar,target=/tmp/105/informatica_1053_server_linux-x64.tar \
-    tar -xvf /tmp/informatica_1053_server_linux-x64.tar -C /apps/infa/105
+    tar -xvf /tmp/105/informatica_1053_server_linux-x64.tar -C /apps/infa/105
 RUN cp SilentInput.properties SilentInput.properties.backup
 COPY shared/config/SilentInput_Default.properties /apps/infa/105/SilentInput.properties
 
