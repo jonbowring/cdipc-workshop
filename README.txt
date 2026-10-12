@@ -63,16 +63,16 @@ sudo docker compose up --detach
 IMPORTANT!!!!!! Everytime you commit a new pre-built image, you need to ensure that the database backup is aligned with the image
 
 Take a backup of the siteKey. For example:
-
-sudo docker cp 72c6530e871c:/apps/infa/105/isp/config/keys/siteKey .
+cd software
+sudo docker cp cdipc-workshop-app0-1:/apps/infa/105/isp/config/keys/siteKey .
 
 ### Backup the database. For example:
 
-sudo docker exec -it 6b7203e34773 /bin/bash
+sudo docker exec -it cdipc-workshop-db0-1 /bin/bash
 cd /tmp
 pg_dumpall -h localhost -U infa --exclude-database=infa > postgres_backup.sql
 exit
-sudo docker cp 6b7203e34773:/tmp/postgres_backup.sql .
+sudo docker cp cdipc-workshop-db0-1:/tmp/postgres_backup.sql .
 
 ### Comment out the SQL statements for the infa database
 For example:
@@ -81,7 +81,7 @@ For example:
 --ALTER ROLE infa WITH SUPERUSER INHERIT CREATEROLE CREATEDB LOGIN REPLICATION BYPASSRLS PASSWORD 'SCRAM-SHA-256$4096:J3GakfSL+GcocBZvauhKVQ==$IjHy3JpuAmnZ6MsZh0oJpIw3gNdFUbhAWEw9NRa25fQ=:7Osz+tZ7ENnDiRIc/cG5b0bqa2QYTGFOidHWffzDgyM=';
 
 ### Commit the newly built app image
-sudo docker commit 72c6530e871c cdipc/prebuilt:latest
+sudo docker commit cdipc-workshop-app0-1 cdipc/prebuilt:latest
 
 ------------------------------------------
 
